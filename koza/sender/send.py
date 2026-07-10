@@ -129,8 +129,10 @@ def main():
     if now.weekday() is not None:  # 土日も送る（曜日で止めない）
         pass
 
-    user = os.environ.get("GMAIL_USER", "").strip()
-    pw = os.environ.get("GMAIL_APP_PASSWORD", "").strip()
+    # GMAIL_USER は1アドレスのみ想定。誤って複数行入っても先頭だけ使う。
+    user = os.environ.get("GMAIL_USER", "").strip().splitlines()[0].strip() if os.environ.get("GMAIL_USER", "").strip() else ""
+    # アプリパスワードは4文字×4のスペース区切りで表示される。スペースは自動除去。
+    pw = os.environ.get("GMAIL_APP_PASSWORD", "").strip().replace(" ", "")
     if not user or not pw:
         print("[stop] GMAIL_USER / GMAIL_APP_PASSWORD secrets not set. Nothing sent."); return
 
