@@ -120,7 +120,9 @@ def build_mail(seg, name, genre, lp):
     return subject, body
 
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
-GENERIC_RE = re.compile(r"^(info|contact|support|office|admin|mail|inquiry|form)@", re.I)
+# プレースホルダ/記入例だけを弾く（本物の事務所の info@ドメイン は通す）
+PLACEHOLDER_RE = re.compile(r"@(example\.|sample\.|test\.|domain\.|your-?domain|mail\.com$|xxx|aaa\.|bbb\.)", re.I)
+PLACEHOLDER_LOCAL_RE = re.compile(r"^(example|sample|test|xxx+|aaa+|bbb+|hoge|foo|bar|user|name|your)@", re.I)
 
 def main():
     now = now_jst()
@@ -165,7 +167,8 @@ def main():
         st = (r.get("status") or "").strip().lower()
         if not email or st.startswith("sent") or st == "stop": continue
         if not EMAIL_RE.match(email): r["status"] = "bademail"; continue
-        if GENERIC_RE.match(email):   r["status"] = "skip-generic"; continue
+        if PLACEHOLDER_RE.search(email) or PLACEHOLDER_LOCAL_RE.match(email):
+            r["status"] = "placeholder"; continue
         if email.lower() in suppress: r["status"] = "stop"; continue
         target = r; break
 
