@@ -5,5 +5,5 @@ email,name,genre,segment,lp,status
 # 例（★本番では消して実在の個人アドレスに置き換える）:,,,,,bademail
 # example-taro@example.com,山田太郎,コーチング,A,,bademail
 info@hdsr.jp,社会保険労務士,労務,A,,sent:2026-07-10
-info@kurashimamaho.com,ご担当者,コーチング,B,,
+info@kurashimamaho.com,ご担当者,コーチング,B,,sent:2026-07-10
 info@wachika.com,取締役阿隅和美,労務,B,,
