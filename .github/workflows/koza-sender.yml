@@ -1,0 +1,42 @@
+name: koza-cold-sender
+
+# GitHubのサーバー上で自動送信する。あなたのPCは不要。
+# 30分ごとに起動し、7〜20時(JST)なら最大1通だけ送る（凍結対策のドリップ）。
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # 30分ごと（UTC）。時間帯の絞りはスクリプト側でJST判定
+  workflow_dispatch: {}       # 手動テスト実行用
+
+permissions:
+  contents: write             # 送信状態(state/csv)をブランチに書き戻すため
+
+concurrency:
+  group: koza-sender
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: send one
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python koza/sender/send.py
+      - name: commit progress
+        run: |
+          git config user.name "koza-sender"
+          git config user.email "actions@users.noreply.github.com"
+          if ! git diff --quiet -- koza/sender/prospects.csv koza/sender/state.json; then
+            git add koza/sender/prospects.csv koza/sender/state.json
+            git commit -m "sender: progress [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "no change"
+          fi
