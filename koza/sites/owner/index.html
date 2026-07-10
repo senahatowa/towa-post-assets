@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>すでに講座をお持ちの方へ｜高単価×低稼働×仲間化</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--ink:#1f2632;--soft:#5e6675;--line:#e8e3d8;--navy:#15233f;--gold:#b4884d;--bg:#faf8f3;--red:#b0463b;}
+  body{font-family:-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);background:var(--bg);line-height:2.02;-webkit-font-smoothing:antialiased;font-feature-settings:"palt"}
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px}
+  .eyebrow{color:var(--gold);font-weight:800;letter-spacing:.1em;font-size:15.5px}
+  header{background:linear-gradient(165deg,#15233f,#21365d);color:#fff;padding:70px 0 60px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-90px;top:-70px;width:240px;height:240px;border-radius:50%;background:rgba(180,136,77,.14)}
+  header .eyebrow{color:#e7c9a1;font-size:18px;letter-spacing:.08em}
+  header h1{font-size:30px;line-height:1.55;margin:16px 0 16px;font-weight:900;letter-spacing:.01em}
+  header h1 .hl{color:#ecce98}
+  header .sub{color:#c6cddc;font-size:16.5px;max-width:640px}
+  section{padding:46px 0}
+  hr.sep{border:none;border-top:1px solid var(--line);max-width:720px;margin:0 auto}
+  .quietlead{font-size:15px;color:var(--soft);font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .quietlead.red{color:var(--red)}
+  .big{font-size:22px;font-weight:900;line-height:1.7;letter-spacing:.01em}
+  .big .hl{color:var(--gold)}
+  p{font-size:16.5px;color:#39414f;margin-top:14px}
+  p.tight{margin-top:9px}
+  .em{font-weight:800;color:var(--ink)}
+  .jab{font-size:17px;font-weight:800;color:var(--ink);margin-top:12px;padding-left:16px;border-left:3px solid var(--red);line-height:1.7}
+  /* price ladder */
+  .price{display:flex;gap:14px;margin-top:24px;flex-wrap:wrap}
+  .price > div{flex:1;min-width:240px;border-radius:16px;padding:24px 24px}
+  .price .old{background:#fff;border:1px solid var(--line)}
+  .price .new{background:var(--navy);color:#fff;border:1px solid var(--navy)}
+  .price small{display:block;font-size:12px;font-weight:800;letter-spacing:.1em;margin-bottom:8px}
+  .price .old small{color:var(--red)} .price .new small{color:#ecce98}
+  .price .amt{font-size:26px;font-weight:900;line-height:1.3;margin-bottom:6px}
+  .price .new .amt{color:#fff}
+  .price .desc{font-size:14px;color:var(--soft)} .price .new .desc{color:#c6cddc}
+  .price-note{text-align:center;font-size:18px;font-weight:900;margin-top:20px}
+  .price-note .hl{color:var(--gold)}
+  /* mechanism */
+  .mech{background:linear-gradient(165deg,#15233f,#21365d);color:#fff;border-radius:18px;padding:32px 28px;margin-top:22px}
+  .mech h3{font-size:19px;font-weight:900;margin-bottom:10px;line-height:1.5}
+  .mech h3 .hl{color:#ecce98}
+  .mech p{color:#c6cddc;font-size:15.5px;margin-top:10px}
+  .mflow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0 4px;font-size:14.5px;font-weight:800}
+  .mflow b{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:9px 13px;color:#fff}
+  .mflow .ar{color:#ecce98;font-weight:900}
+  .twopay{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap}
+  .twopay div{flex:1;min-width:200px;background:rgba(255,255,255,.06);border-radius:12px;padding:16px 18px}
+  .twopay b{color:#ecce98;display:block;margin-bottom:4px;font-size:15px}
+  .twopay span{color:#c6cddc;font-size:14px}
+  /* benefit */
+  .bens{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px}
+  .ben{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start}
+  .ben .ic{flex-shrink:0;width:52px;height:52px;border-radius:12px;background:#15233f;color:#ecce98;display:flex;align-items:center;justify-content:center;font-size:24px}
+  .ben b{font-size:18px;font-weight:900;display:block;margin-bottom:4px;line-height:1.5}
+  .ben span{color:var(--soft);font-size:15px;line-height:1.85}
+  .cta{background:linear-gradient(165deg,#15233f,#21365d);color:#fff;text-align:center;border-radius:22px;padding:46px 30px;margin:14px 0}
+  .cta .quietlead{color:#9aa3b6}
+  .cta h2{font-size:23px;line-height:1.6;margin:6px 0 14px}
+  .cta h2 .hl{color:#ecce98}
+  .cta p{color:#c6cddc;font-size:15.5px;max-width:540px;margin:0 auto 24px}
+  .btn{display:inline-block;background:#06c755;color:#fff;font-weight:900;font-size:16.5px;padding:17px 38px;border-radius:999px;text-decoration:none;box-shadow:0 10px 24px rgba(6,199,85,.3)}
+  .cta .fine{margin-top:14px;color:#9aa3b6;font-size:12.5px}
+  footer{text-align:center;color:var(--soft);font-size:12px;padding:30px 0 48px}
+  @media(max-width:520px){header h1{font-size:24px}.big{font-size:20px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">すでに講座・プログラムをお持ちの方へ</div>
+    <h1>講座は作った。<br>なのに、<span class="hl">前より忙しくなっていませんか。</span></h1>
+    <p class="sub">客単価を100万円以上に引き上げ、あなたの稼働を減らし、失った時間を取り戻す——そして“あなたの代わりに動く仲間”まで生む設計図です。</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="quietlead red">正直に、思い当たりませんか</p>
+    <p class="big">「自由になりたくて」作った講座に、<br><span style="color:var(--red)">いちばん縛られているのは、あなた。</span></p>
+    <p>コンテンツも、セールスも、サポートも、クレーム対応も——結局ぜんぶ自分。<br>受講生が増えるほど、同じ質問に、また一から答える。</p>
+    <p class="tight">休もうとすれば、売上が止まる。だから、休めない。<br>家族との時間も、自分の時間も、気づけば全部"講座"に溶けている。</p>
+    <p class="jab">売上は上がった。でも、あれだけ欲しかった"時間"だけは、いまだに一秒も増えていない。</p>
+    <p class="tight">そして、いちばん怖いのは——<span class="em">この働き方を、5年後も続けられますか？</span></p>
+  </div>
+</section>
+<hr class="sep">
+
+<section>
+  <div class="wrap">
+    <p class="quietlead">あなたが疲れる、本当の原因</p>
+    <p class="big">“安く売って、数で稼ごう”としているから。</p>
+    <p>単価が低いほど、売上のために人数を追うしかない。人数が増えれば、対応も負担も比例して増える。<span class="em">これは、頑張るほど自分を消耗させる仕組み</span>です。</p>
+    <div class="price">
+      <div class="old">
+        <small>いまのやり方</small>
+        <div class="amt" style="color:var(--red)">数万〜数十万 ×<br>たくさん</div>
+        <div class="desc">人数を追う → 稼働MAX、休めない、消耗</div>
+      </div>
+      <div class="new">
+        <small>これから</small>
+        <div class="amt">100万〜300万 ×<br>少人数</div>
+        <div class="desc">少数の本気の人だけ → 同じ売上、稼働は激減</div>
+      </div>
+    </div>
+    <p class="price-note">単価を10倍にすれば、人数は<span class="hl">1/10でいい。</span><br>あなたの時間が、戻ってくる。</p>
+  </div>
+</section>
+<hr class="sep">
+
+<section>
+  <div class="wrap">
+    <p class="quietlead">さらに、高単価講座だけの“からくり”</p>
+    <p class="big">あなたの受講生が、次は<br><span class="hl">“一緒に事業を回す仲間”</span>になる。</p>
+    <div class="mech">
+      <h3>本気で教えた受講生は、<span class="hl">ただのお客さんで終わりません。</span></h3>
+      <p>高単価で本気の人が集まると、その中から「あなたの事業を一緒に動かせる人」が育ちます。運営・サポート・集客を任せられる——つまり、<b style="color:#fff">採用（リクルート）まで講座の中で起きる。</b></p>
+      <div class="mflow">
+        <b>教える</b><span class="ar">→</span><b>できる人が育つ</b><span class="ar">→</span><b>現場を任せる</b><span class="ar">→</span><b>あなたは動かなくていい</b>
+      </div>
+      <div class="twopay">
+        <div><b>① 売上が入る</b><span>受講生があなたに高単価を払う</span></div>
+        <div><b>② 仲間が増える</b><span>その受講生が、運営を担うパートナーに</span></div>
+      </div>
+      <p style="margin-top:16px"><b style="color:#fff">一人で抱える講座から、チームで回る事業へ。</b><br>これが、売上も時間も“本当に増える”仕組みです。</p>
+    </div>
+  </div>
+</section>
+<hr class="sep">
+
+<section>
+  <div class="wrap">
+    <p class="quietlead">結果、あなたはこう変わる</p>
+    <div class="bens">
+      <div class="ben"><div class="ic">⤴</div><div><b>客単価が、100万〜300万になる</b><span>人数を追わない。少人数・高単価で、今と同じか、それ以上の売上に。</span></div></div>
+      <div class="ben"><div class="ic">☾</div><div><b>失った時間が、返ってくる</b><span>稼働が減り、休んでも回る。家族にも自分にも、時間を使える。</span></div></div>
+      <div class="ben"><div class="ic">⚙</div><div><b>あなたの代わりに動く仲間が増える</b><span>受講生がパートナーに育ち、事業が“あなた抜き”でも回り始める。</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <p style="text-align:center;font-size:21px;font-weight:900;line-height:1.75;color:var(--ink)">講座を“もっと頑張る”のは、もう終わり。<br>次は、<span style="color:var(--gold)">単価を上げて、仲間を増やして、あなたが楽になる番</span>です。</p>
+  </div>
+</section>
+
+<section style="padding-top:18px;padding-bottom:24px">
+  <div class="wrap">
+    <div class="cta">
+      <p class="quietlead">わたしがやること</p>
+      <h2>あなたの講座を<span class="hl">「高単価 × 低稼働 × 仲間化」</span>に変える設計図を、<br>LINEで無料でお作りします。</h2>
+      <p>今の講座を数問お聞きするだけで、「どこを100万+に上げ、どこを手放し、誰を仲間にするか」を1枚にしてお送りします。売り込みはしません。</p>
+      <a class="btn" href="https://lin.ee/9mgPajcG">＋ LINEで友だち追加して受け取る</a>
+      <div class="fine">※その場で営業はしません。まずは“単価と時間の伸びしろ”だけお見せします。</div>
+    </div>
+  </div>
+</section>
+<footer>すでに講座をお持ちの方へ ／ 高単価×低稼働×仲間化の設計図　※架空の実績・数字は載せていません</footer>
+</body>
+</html>
