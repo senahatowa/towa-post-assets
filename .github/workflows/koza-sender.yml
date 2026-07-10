@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: claude/blissful-mayer-eqrz0x
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -36,7 +36,7 @@ jobs:
           if ! git diff --quiet -- koza/sender/prospects.csv koza/sender/state.json; then
             git add koza/sender/prospects.csv koza/sender/state.json
             git commit -m "sender: progress [skip ci]"
-            git push origin HEAD:claude/blissful-mayer-eqrz0x
+            git push origin HEAD:main
           else
             echo "no change"
           fi
