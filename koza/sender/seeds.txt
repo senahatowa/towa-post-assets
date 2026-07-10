@@ -1,0 +1,30 @@
+# 燃料の入口：個人・小規模の専門家サイトだけ厳選（大手・法人・官公庁は入れない）
+# collect.py がここを巡回して「実在メール」だけ抽出する。増やす時もここに個人サイトURLを足す。
+
+# --- 税理士（個人・小規模専門） ---
+https://mzdtax.jp/
+https://masudatax.jp/
+http://www.kojin-taxoffice.jp/
+https://ishiguro-tax.jp/
+https://nio-tax.com/
+https://hatakeyama-tax.com/
+
+# --- 社労士（個人事務所） ---
+https://hdsr.jp/
+https://jimukumiai.com/
+https://hiyokkosharoushi.net/
+https://sr-kokoro.com/
+https://shimomura-sr.com/
+
+# --- 行政書士（個人事務所） ---
+https://shossy.com/
+https://jun-gyosho.com/
+https://gyousei-juju.jp/
+
+# --- コーチ・話し方（個人） ---
+https://keikoiwatani.com/
+https://yoshimi-lifecoach.com/
+https://kurashimamaho.com/
+https://wachika.com/
+https://best-speaker.com/
+https://ohashi-speech.com/
