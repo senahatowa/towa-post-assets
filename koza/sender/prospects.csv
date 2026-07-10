@@ -4,3 +4,6 @@ email,name,genre,segment,lp,status
 # segment: A(講座なし) か B(講座あり)。lpは空でOK(空ならLINE直行)。
 # 例（★本番では消して実在の個人アドレスに置き換える）:
 # example-taro@example.com,山田太郎,コーチング,A,,
+info@hdsr.jp,社会保険労務士,労務,A,,
+info@kurashimamaho.com,ご担当者,コーチング,B,,
+info@wachika.com,取締役阿隅和美,労務,B,,
