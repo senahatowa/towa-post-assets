@@ -1,7 +1,6 @@
 email,name,genre,segment,lp,status
-# ↑この見出し行は消さない。下に「個人のクリーンなメール」だけ足す。
+rocalmichikusa@gmail.com,テスト送信,コーチング,A,,
+# ↑これはパイプライン確認用のテスト1件（自分宛）。確認後に消す。
+# 以降、本番は「個人のクリーンなメール」だけ足す。
 # genre候補: コーチング / 話し方 / Web集客 / 税務 / 労務 / 手続き
 # segment: A(講座なし) か B(講座あり)。lpは空でOK(空ならLINE直行)。
-# 例（★本番では消して実在の個人アドレスに置き換える）:
-# example-taro@example.com,山田太郎,コーチング,A,,
-# example-hanako@example.com,鈴木花子,税務,A,,
