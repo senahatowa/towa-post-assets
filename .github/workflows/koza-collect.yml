@@ -1,0 +1,36 @@
+name: koza-collect
+
+# 燃料補充：GitHubのサーバー（＝ネットに出られる）で collect.py を回し、
+# seeds.txt の個人サイトから実在メールを抽出して prospects.csv に追記する。
+# 手動起動のみ（勝手に増やさない＝入口を管理する）。
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: install deps
+        run: pip install requests beautifulsoup4
+      - name: harvest emails
+        run: python koza/sender/collect.py koza/sender/seeds.txt
+      - name: commit list
+        run: |
+          git config user.name "koza-collect"
+          git config user.email "actions@users.noreply.github.com"
+          if ! git diff --quiet -- koza/sender/prospects.csv; then
+            git add koza/sender/prospects.csv
+            git commit -m "collect: harvested prospects [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "no new prospects"
+          fi
